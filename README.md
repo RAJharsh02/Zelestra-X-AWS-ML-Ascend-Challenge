@@ -51,6 +51,54 @@ Develop a machine learning model that predicts performance degradation and poten
 
 ## 📐 Evaluation Metric
 
-```python
-Score = 100 * (1 - sqrt(mean_squared_error(actual, predicted)))
+### 🧠 Models Used
+- ✅ TabNet Regressor** (Best score: 89.74798%)
+- 🟡 CatBoost Regressor
+- 🟡 XGBoost Regressor
+
+The TabNet model provided the best performance and was used for the final submission.
+
+---
+
+### 🧭 Approach
+
+#### 1. Data Preprocessing
+- **Categorical Encoding:**  
+  Encoded `string_id`, `error_code`, and `installation_type` using label encoding or one-hot encoding as needed.
+- **Feature Engineering:**  
+  Created new feature `power = voltage × current` to represent total energy output.
+- **Handling Missing Data:**  
+  Checked and handled missing or anomalous values.
+- **Scaling:**  
+  Normalized numerical features to improve model performance.
+
+#### 2. Model Training
+- Trained **XGBoost** and **CatBoost** with hyperparameter tuning (Grid/Random Search) and early stopping.
+- Trained **TabNet Regressor** with:  
+  - Learning rate scheduler  
+  - Early stopping  
+  - Custom metric evaluation  
+- Used cross-validation for robust evaluation.
+
+#### 3. Evaluation & Ensembling
+- Compared model scores using the evaluation metric.
+- TabNet achieved the highest score of **89.74798%**.
+- Predictions were generated on the test set and submitted in the required format.
+
+---
+
+### 📊 Results
+
+| Model    | Score (%)   |
+| -------- | ----------- |
+| TabNet   | 89.74798 ✅ |
+| XGBoost  | 87.10       |
+| CatBoost | 86.95       |### 🧠 Models Used
+- ✅ **TabNet Regressor** (Best score: 89.74798%)
+- 🟡 CatBoost Regressor
+- 🟡 XGBoost Regressor
+
+The TabNet model provided the best performance and was used for the final submission.
+
+
 
