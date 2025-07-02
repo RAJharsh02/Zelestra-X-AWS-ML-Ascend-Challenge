@@ -96,8 +96,8 @@ The TabNet model provided the best performance and was used for the final submis
 | Model    | Score (%)   |
 | -------- | ----------- |
 | TabNet   | 89.74798 ✅ |
-| XGBoost  | 87.10       |
-| CatBoost | 86.95       |### 🧠 Models Used
+| XGBoost  | 89.71562     |
+| CatBoost | 89.71898       |### 🧠 Models Used
 - ✅ **TabNet Regressor** (Best score: 89.74798%)
 - 🟡 CatBoost Regressor
 - 🟡 XGBoost Regressor
