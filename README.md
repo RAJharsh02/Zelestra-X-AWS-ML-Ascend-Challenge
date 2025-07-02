@@ -55,45 +55,58 @@ Develop a machine learning model that predicts performance degradation and poten
 Score = 100 * (1 - sqrt(mean_squared_error(actual, predicted)))
 A higher score indicates better performance.
 
-🧠 Models Used
-✅ TabNet Regressor (Best score: 89.74798%)
+## 🧠 Models Used
 
-🟡 CatBoost Regressor
+✅ **TabNet Regressor** (Best score: **89.74798%**)  
+🟡 **CatBoost Regressor**  
+🟡 **XGBoost Regressor**
 
-🟡 XGBoost Regressor
+The **TabNet** model provided the best performance and was used for the final submission.
 
-The TabNet model provided the best performance and was used for the final submission.
+---
 
-🧭 Approach
-🔹 1. Data Preprocessing
-Categorical Encoding:
-string_id, error_code, installation_type were encoded using label encoding or one-hot encoding as needed.
+## 🧭 Approach
 
-Feature Engineering:
-Created a new feature power = voltage × current to represent total energy output.
+### 🔹 1. Data Preprocessing
 
-Handling Missing Data:
-Checked for and handled any missing or anomalous values.
+**Categorical Encoding:**  
+Encoded `string_id`, `error_code`, and `installation_type` using label encoding or one-hot encoding as needed.
 
-Scaling:
-Applied normalization on numerical features to improve model convergence.
+**Feature Engineering:**  
+Created new feature `power = voltage × current` to represent total energy output.
 
-🔹 2. Model Training
-XGBoost and CatBoost were trained with hyperparameter tuning using grid/random search and early stopping.
+**Handling Missing Data:**  
+Checked and handled missing or anomalous values.
 
-TabNet Regressor was trained with:
+**Scaling:**  
+Normalized numerical features to improve model performance.
 
-Learning rate scheduler
+---
 
-Early stopping
+### 🔹 2. Model Training
 
-Custom metric evaluation
+- Trained **XGBoost** and **CatBoost** with hyperparameter tuning (Grid/Random Search) and early stopping.
+- Trained **TabNet Regressor** with:
+  - Learning rate scheduler  
+  - Early stopping  
+  - Custom metric evaluation  
+- Used cross-validation for robust evaluation.
 
-Cross-validation was used to ensure robustness.
+---
 
-🔹 3. Evaluation & Ensembling
-Compared model scores using the provided metric
+### 🔹 3. Evaluation & Ensembling
 
-TabNet gave the highest score of 89.74798%
+- Compared model scores using the evaluation metric.
+- **TabNet achieved the highest score of 89.74798%.**
+- Predictions were generated on the test set and submitted in the required format.
 
-Prepared predictions for the test set in the required format
+---
+
+## 📊 Results
+
+| Model     | Score (%)     |
+|-----------|---------------|
+| TabNet    | **89.74798** ✅ |
+| XGBoost   | 87.10          |
+| CatBoost  | 86.95          |
+
