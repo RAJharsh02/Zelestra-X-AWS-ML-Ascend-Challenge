@@ -51,6 +51,10 @@ Develop a machine learning model that predicts performance degradation and poten
 
 ## 📐 Evaluation Metric
 
+Score = 100 * (1 - sqrt(mean_squared_error(actual, predicted)))
+
+---
+
 ### 🧠 Models Used
 - ✅ TabNet Regressor** (Best score: 89.74798%)
 - 🟡 CatBoost Regressor
